@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="todo">
+        <h1>Lista de Usuarios</h1>
+        <img class="im" src="{{ url_for('static', filename='ICONO.png') }}" alt="Imagen decorativa">
+        <form action="/add_user" method="post">
+            <input type="text" name="username" placeholder="Nombre de usuario" required>
+            <button type="submit">Agregar Usuario</button>
+        </form>
+        <ul>
+            {% for user in users %}
+                <li>{{ user }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
